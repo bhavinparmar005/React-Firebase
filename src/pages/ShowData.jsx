@@ -2,12 +2,22 @@ import { collection, getDocs, doc, deleteDoc } from "firebase/firestore";
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { db } from "../../Firebase";
+import { signOut } from "firebase/auth";
+import { auth } from "../../Firebase";
 
 
 const ShowData = () => {
   let nav = useNavigate();
 
   const [allData, setAllData] = useState([]);
+  const logout =()=>{
+    signOut(auth).then(()=>{
+      alert("sign out");
+      nav('/')
+    })
+
+
+  }
 
   
   const getData = async () => {
@@ -42,6 +52,7 @@ const ShowData = () => {
         <h2 className="text-center mb-4">All Contect Data</h2>
         <div className="container d-flex justify-content-end mb-2 ">
           <button className="btn btn-dark btn-sm m-2 fs-6 text-light" onClick={() => nav('/')}> Add Contect</button>
+          <button className="btn btn-dark btn-sm m-2 fs-6 text-light" onClick={() => logout()}> LogOut</button>
         </div>
         <div className="table-responsive">
           <table className="table table-striped table-bordered text-center">
