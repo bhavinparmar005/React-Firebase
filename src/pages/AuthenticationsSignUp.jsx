@@ -21,7 +21,7 @@ const AuthenticationsSignUp = () => {
         alert("hello facebook")
     }
     const handleSubmit = () => {
-        alert("form submited");
+        alert("only google with sign-up");
 
     }
 

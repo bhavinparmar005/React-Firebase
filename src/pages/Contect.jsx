@@ -64,7 +64,7 @@ const Contect = () => {
                                 <textarea className="form-control" id="message" rows={3} placeholder="Enter your message" required  name='message'  onChange={handleChange} value={formData.message}/>
                             </div>
                         </div>
-                        <button type="submit" className="btn btn-submit fs-5">Sign Up</button>
+                        <button type="submit" className="btn btn-submit fs-5">Add</button>
                         <button type="submit" className="btn btn-submit fs-5 mt-2 mb-2" onClick={()=> nav('/signpage')}>Login</button>
                        
                     </form>
